@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+
+    background-color: #1e293b;
+
+}
+.swal-popup {
+  background: #fff; /* Change this to match your background aesthetics */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.swal-title {
+  font-family: 'Your Custom Font', sans-serif; /* Change this to match your font */
+  font-size: 24px;
+  color: #333; /* Change this to match your color scheme */
+}
+
+.swal-button {
+  background: #3085d6; /* Change this to match your button color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
