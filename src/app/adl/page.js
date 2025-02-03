@@ -20,7 +20,7 @@ export default function AdminLoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://backend-accounting-d1352e11cad3.herokuapp.com/api/authenticate_admin/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/authenticate_admin/', {
                 username,
                 password
             });

@@ -47,7 +47,7 @@ export default function AdminDashPage() {
         setLoading(true);
         try {
             const response = await axios.get(
-                `https://backend-accounting-d1352e11cad3.herokuapp.com/api/documents/${username}`
+                `http://127.0.0.1:8000/api/documents/${username}`
             );
             const groupedDocuments = response.data.documents.reduce((acc, doc) => {
                 acc.push(doc);
@@ -69,7 +69,7 @@ export default function AdminDashPage() {
     const fetchBalance = async () => {
         try {
             const response = await axios.get(
-                `https://backend-accounting-d1352e11cad3.herokuapp.com/api/balance/${username}`
+                `http://127.0.0.1:8000/api/balance/${username}`
             );
             setBalance(response.data.balance);
         } catch (error) {
@@ -104,7 +104,7 @@ export default function AdminDashPage() {
       
           // Make the POST request to update_id_field endpoint
           const response = await axios.post(
-            'https://backend-accounting-d1352e11cad3.herokuapp.com/api/update_id_field/',
+            'http://127.0.0.1:8000/api/update_id_field/',
             payload
           );
       

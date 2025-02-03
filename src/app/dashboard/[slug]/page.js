@@ -48,7 +48,7 @@ const [filterAvailableBalanceRange, setFilterAvailableBalanceRange] = useState([
     
         const fetchDocuments = async () => {
             try {
-                const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_dashboard_documents/${slug}`);
+                const response = await axios.get(`http://127.0.0.1:8000/api/get_dashboard_documents/${slug}`);
                 setDocuments(response.data.documents);
             } catch (error) {
                 console.error('Error fetching documents:', error);
@@ -133,7 +133,7 @@ const [filterAvailableBalanceRange, setFilterAvailableBalanceRange] = useState([
 
         const fetchFilteredDocuments = async () => {
             try {
-                const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_dashboard_id_details/${slug}`);
+                const response = await axios.get(`http://127.0.0.1:8000/api/get_dashboard_id_details/${slug}`);
                 setFilteredDocuments(response.data.documents);
             } catch (error) {
                 console.error('Error fetching filtered documents:', error);
@@ -324,7 +324,7 @@ const [filterAvailableBalanceRange, setFilterAvailableBalanceRange] = useState([
         const handleBlockToggle = async (accountNumber, currentBlockedStatus) => {
             try {
                 // Make an API call to toggle the `blocked` status in the backend
-                await axios.post(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/update_block_status/`, {
+                await axios.post(`http://127.0.0.1:8000/api/update_block_status/`, {
                     account_number: accountNumber,
                     new_blocked_status: currentBlockedStatus === 0 ? 1 : 0
                 });

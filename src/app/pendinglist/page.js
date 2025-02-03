@@ -37,7 +37,7 @@ export default function Home() {
   const fetchPendingTransactions = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://backend-accounting-d1352e11cad3.herokuapp.com/api/pending_transactions/');
+      const response = await axios.get('http://127.0.0.1:8000/api/pending_transactions/');
       console.log(response.data);
       setPendingTransactions(response.data);
     } catch (error) {
@@ -61,7 +61,7 @@ export default function Home() {
 
 
 
-      await axios.post('https://backend-accounting-d1352e11cad3.herokuapp.com/api/update_status/', formData, {
+      await axios.post('http://127.0.0.1:8000/api/update_status/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
