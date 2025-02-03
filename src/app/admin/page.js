@@ -131,7 +131,7 @@ function Page() {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(`http://localhost:3000/${createdPassword}`).then(() => {
+    navigator.clipboard.writeText(`https://accounting-frontend-six.vercel.app/${createdPassword}`).then(() => {
       toast.success('Password URL copied to clipboard', {
         position: "top-right",
         autoClose: 3000,
@@ -220,7 +220,7 @@ function Page() {
                   <p><strong>Name:</strong> {admin.name}</p>
                   <p><strong>UPI:</strong> {admin.UPI}</p>
                   <p><strong>Name on UPI:</strong> {admin.nameonupi}</p>
-                  <p><strong>Link:</strong> <a href={`http://localhost:3000/${admin.password}`} target="_blank" rel="noopener noreferrer">http://localhost:3000/{admin.password}</a></p>
+                  <p><strong>Link:</strong> <a href={`https://accounting-frontend-six.vercel.app/${admin.password}`} target="_blank" rel="noopener noreferrer">https://accounting-frontend-six.vercel.app/{admin.password}</a></p>
                   <button 
                     className="mt-4 p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none"
                     onClick={() => handleAdminClick(admin.password)}
@@ -244,7 +244,7 @@ function Page() {
         <div className="relative w-full">
           <input
             type="text"
-            value={`http://localhost:3000/${createdPassword}`}
+            value={`https://accounting-frontend-six.vercel.app/${createdPassword}`}
             readOnly
             className="w-full p-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:outline-none"
           />
