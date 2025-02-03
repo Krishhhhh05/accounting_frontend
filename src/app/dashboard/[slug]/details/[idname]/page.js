@@ -14,7 +14,7 @@ const DetailsPage = ({ params }) => {
             try {
                 console.log("Fetching data with", { slug, idName });
                 console.log(params.idname);
-                const response = await axios.get(`http://localhost:8000/api/get_type_details/${slug}/${params.idname}`);
+                const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_type_details/${slug}/${params.idname}`);
                 console.log("Data fetched:", response.data);
                 setData(response.data.documents);
             } catch (error) {

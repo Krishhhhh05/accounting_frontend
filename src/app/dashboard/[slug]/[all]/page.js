@@ -14,7 +14,7 @@ const AllStatements = () => {
             const fetchFilteredDocuments = async () => {
                 try {
                     console.log("Slug Value:", slug); // Debugging log
-                    const response = await axios.get(`http://localhost:8000/api/get_filtered_documents/${slug}`);
+                    const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_filtered_documents/${slug}`);
                     setTransactions(response.data.documents);
                 } catch (error) {
                     console.error('Error fetching filtered documents:', error);

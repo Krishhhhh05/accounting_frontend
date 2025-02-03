@@ -23,7 +23,7 @@ const [filterType, setFilterType] = useState('');
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/get_client_documents/${accountNumber}`);
+                const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_client_documents/${accountNumber}`);
                 const fetchedDocuments = response.data.documents;
                 const fetchedOpeningBalance = response.data.opening_balance || 0;
 
