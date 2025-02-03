@@ -67,7 +67,7 @@ function Page() {
     const formDataWithPassword = { ...formData, password: randomPassword };
 
     try {
-      await axios.post('http://127.0.0.1:8000/api/create/', formDataWithPassword);
+      await axios.post('https://backend-accounting-d1352e11cad3.herokuapp.com/api/create/', formDataWithPassword);
       toast.success('User created successfully', {
         position: "top-right",
         autoClose: 5000,
@@ -99,7 +99,7 @@ function Page() {
   const fetchAdmins = async () => {
     setLoading(true); // Start loading
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/admins/');
+      const response = await axios.get('https://backend-accounting-d1352e11cad3.herokuapp.com/api/admins/');
       setAdmins(response.data);
     } catch (error) {
       console.error('Error fetching admins:', error.message);

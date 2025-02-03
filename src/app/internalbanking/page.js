@@ -32,7 +32,7 @@ function Page() {
         formData.append('screenshot', modalFormData.screenshot); // Screenshot file
       }
   
-      const response = await fetch('http://127.0.0.1:8000/api/submit_bank_transaction/', {
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/submit_bank_transaction/', {
         method: 'POST',
         body: formData,
       });
@@ -55,7 +55,7 @@ function Page() {
   
     try {
       // Send the form data to the backend API
-      const response = await fetch('http://127.0.0.1:8000/api/submit_bank_outside_details/', {
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/submit_bank_outside_details/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ function Page() {
   // Fetch bank documents (move this out of useEffect so it can be reused)
   const fetchBankDocuments = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/get_bank_documents/');
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_bank_documents/');
       const data = await response.json();
       if (response.ok) {
         setBankDocuments(data.banks);
@@ -142,7 +142,7 @@ function Page() {
     setBanksLoading(true);
     setBanksError(null);
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/get_internal_banks/');
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_internal_banks/');
       const data = await response.json();
       if (response.ok) {
         setInternalBanks(data.internal_banks_collections);
@@ -161,7 +161,7 @@ function Page() {
   const fetchCollectionData = async (accountNumber) => {
     try {
       console.log("capturer")
-      const response = await fetch(`http://127.0.0.1:8000/api/get_client_documents/${accountNumber}`);
+      const response = await fetch(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_client_documents/${accountNumber}`);
       const data = await response.json();
       if (response.ok) {
         setExpandedRowData((prevData) => ({

@@ -41,7 +41,7 @@ function DynamicPage({ params }) {
 
   const fetchTypeOptions = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/get_type_options/${slug}`);
+      const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_type_options/${slug}`);
       setTypeOptions(response.data.types);  // Update state with the fetched options
     } catch (error) {
       console.error('Error fetching type options:', error);
@@ -51,7 +51,7 @@ function DynamicPage({ params }) {
 
   const fetchAdminDetails = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/check/${slug}`);
+      const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/check/${slug}`);
       setAdminDetails(response.data);
     } catch (error) {
       console.error('Error fetching admin details:', error.message);
@@ -110,7 +110,7 @@ function DynamicPage({ params }) {
 
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/submit_payment/', formData, {
+      const response = await axios.post('https://backend-accounting-d1352e11cad3.herokuapp.com/api/submit_payment/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -128,7 +128,7 @@ function DynamicPage({ params }) {
 
   const checkPaymentStatus = async (dbName, collectionName, docId) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/check_payment_status/${dbName}/${collectionName}/${docId}`);
+      const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/check_payment_status/${dbName}/${collectionName}/${docId}`);
       const status = response.data.status;
       if (status === 'submit') {
         setPaymentStatus('submit');

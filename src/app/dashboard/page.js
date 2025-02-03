@@ -167,7 +167,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchAdminDetails = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/get_all_details');
+                const response = await axios.get('https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_all_details');
                 const details = response.data.admin_details;
                 console.log(details);
                 setAdminDetails(details);

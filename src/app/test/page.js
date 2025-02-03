@@ -18,7 +18,7 @@ function Page() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/create_id_details/", {
+      const response = await fetch("https://backend-accounting-d1352e11cad3.herokuapp.com/api/create_id_details/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

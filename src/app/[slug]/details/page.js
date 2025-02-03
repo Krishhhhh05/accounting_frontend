@@ -54,7 +54,7 @@ function DynamicPage({ params }) {
     };
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/update_company_bank/', {
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/update_company_bank/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ function DynamicPage({ params }) {
 
   const fetchAdminDetails = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/check/${slug}`);
+      const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/check/${slug}`);
       setAdminDetails(response.data);
       fetchBankDetails(response.data.name); // Fetch bank details using admin name
       fetchIdDetails(response.data.name); // Fetch ID details using admin name
@@ -94,7 +94,7 @@ function DynamicPage({ params }) {
   // Fetch Bank details using adminDetails.name
   const fetchBankDetails = async (adminName) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/get_bank_details/${adminName}`);
+      const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_bank_details/${adminName}`);
       setBankDetailsList(response.data.banks || []);  // Set the bank details
       console.log(response.data)
     } catch (error) {
@@ -106,7 +106,7 @@ function DynamicPage({ params }) {
   // Fetch ID details using adminDetails.name
   const fetchIdDetails = async (adminName) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/get_id_details/${adminName}`);
+      const response = await axios.get(`https://backend-accounting-d1352e11cad3.herokuapp.com/api/get_id_details/${adminName}`);
       setIdDetailsList(response.data.ids || []);  // Set the ID details
     } catch (error) {
       console.error('Error fetching ID details:', error.message);
@@ -160,7 +160,7 @@ function DynamicPage({ params }) {
 
     try {
       console.log("heris")
-      const response = await fetch('http://127.0.0.1:8000/api/submit_bank_details/', {
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/submit_bank_details/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -191,7 +191,7 @@ function DynamicPage({ params }) {
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/submit_id_details/', {
+      const response = await fetch('https://backend-accounting-d1352e11cad3.herokuapp.com/api/submit_id_details/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
